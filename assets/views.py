@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse
+from django.shortcuts import get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 import json
 from . import models
@@ -29,3 +30,18 @@ def report(request):
                 return HttpResponse(response)
         else:
             return HttpResponse('没有资产sn序列号，请检查数据！')
+
+
+def dashboard(request):
+    pass
+    return render(request, 'assets/dashboard.html', locals())
+
+
+def index(request):
+    assets = models.Asset.objects.all()
+    return render(request, 'assets/index.html', locals())
+
+
+def detail(request, asset_id):
+    asset = get_object_or_404(models.Asset, id=asset_id)
+    return render(request, 'assets/detail.html', locals())

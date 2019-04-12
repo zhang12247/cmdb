@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}仪表盘{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'dist/css/AdminLTE.min.css' %}">
+    <link rel="stylesheet" href="{% static 'dist/css/skins/_all-skins.min.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section class="content-header">
+        <h1>
+            仪表盘
+            <small>dashboard</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i>主页</a></li>
+            <li class="active">仪表盘</li>
+        </ol>
+    </section>
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'bower_components/jquery-slimscroll/jquery.slimscroll.min.js' %}"></script>
+    <script src="{% static 'bower_components/fastclick/lib/fastclick.js' %}"></script>
+    <script src="{% static 'dist/js/adminlte.min.js' %}"></script>
+    <script src="{% static 'dist/js/demo.js' %}"></script>
+    <script src="{% static 'bower_components/jquery-knob/js/jquery.knob.js' %}"></script>
+{% endblock %}
